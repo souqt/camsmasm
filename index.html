@@ -2,23 +2,6 @@
 <html lang="ar" hreflang="ar-sa" style="height: 100%;"> 
 <head>  
 </html> 
-    <script>
-        // دالة للتحقق من وجود الـCookie
-        function checkCookie() {
-            if (document.cookie.indexOf('passedSecurity=true') !== -1) {
-                // إذا كان الـCookie موجودًا، يتم السماح بالوصول
-                console.log("العودة من صفحة الحماية، الوصول مسموح");
-                // يمكنك إضافة المزيد من الأكواد هنا لتفعيل أي ميزات تحتاجها
-            } else {
-                // إذا لم يكن الـCookie موجودًا، يتم إعادة توجيه الزائر إلى صفحة الحماية
-                window.location.href = "https://www.chatelgaram.com/tlgawygold.html"; // استبدل هذا برابط صفحة الحماية الخاصة بك
-            }
-        }
-
-        // استدعاء الدالة عند تحميل الصفحة
-        window.onload = checkCookie;
-    </script>
-
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -32,6 +15,20 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
   <title> شات سمسمة دردشة سمسمه للجوال</title>
+    <script>
+        window.onload = function() {
+            // التحقق من وجود الـCookie
+            if (document.cookie.indexOf('passedSecurity=true') === -1) {
+                // إذا لم يكن موجودًا، يتم إعادة توجيه الزائر إلى صفحة الحماية
+                window.location.href = "https://www.chatelgaram.com/tlgawygold.html"; // استبدل هذا برابط صفحة الحماية الخاصة بك
+            } else {
+                // إذا كان الـCookie موجودًا، يُسمح بالوصول إلى المحتوى
+                document.write("<h1>مرحبًا بك في موقعك الأصلي</h1>");
+                document.write("<p>هذا هو محتوى موقعك.</p>");
+            }
+        };
+    </script>
+
   <iframe allow='camera;gyroscope;accelerometer;magnetometer;xr-spatial-          tracking;microphone;' src='https://www.chatelgaram.com/' style='     position: fixed;     top: 0px;     bottom: 0px;     right: 0px;     width: 100%;     border: none;     margin: 0;     padding: 0;     overflow: hidden;     z-index: 999999;     height: 100%;   '>
 </iframe>
 </html>
